@@ -1,6 +1,7 @@
-## 1.1.1
+## 1.1.2
 
 - `fillForm` handle checkbox indetermination
+- `resetForm` set checkboxes values to indeterminate
 
 ## 1.1.0
 

@@ -94,7 +94,7 @@ export async function resetForm(form: HTMLElement) {
       node.value = '';
       // resizeTextArea(node)
     } else if (node instanceof Checkbox) {
-      // node.indeterminate = true
+      node.indeterminate = true;
     } else if (node instanceof HTMLSelectElement) {
       node.value = '';
     }
