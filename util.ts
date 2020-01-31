@@ -70,7 +70,13 @@ export function fillForm(form: HTMLElement, object: any) {
           element instanceof HTMLSelectElement) {
         element.value = object[label] || '';
       } else if (element instanceof Checkbox) {
-        element.checked = object[label];
+        if (object[label] === true || object[label] === false) {
+          element.indeterminate = false;
+          element.checked = object[label];
+        }
+        else {
+          element.indeterminate = true;
+        }
       }
       // else if (element instanceof HTMLSelectElement) {
       //   element.value = object[label]
