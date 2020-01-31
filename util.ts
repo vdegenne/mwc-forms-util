@@ -54,9 +54,8 @@ export function serializeForm(form: HTMLElement) {
         values[label] = parseFloat(values[label]) || null;
       }
     } else if (element instanceof Checkbox) {
-      if (!element.indeterminate) {
-        values[label] = element.checked;
-      }
+      values[label] = !element.indeterminate ? element.checked : null;
+
     } else if (element instanceof HTMLSelectElement) {
       values[label] = element.value;
     }
