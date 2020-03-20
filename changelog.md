@@ -1,3 +1,7 @@
+## 1.1.3
+
+- Remove the material web components dependencies
+
 ## 1.1.2
 
 - `fillForm` handle checkbox indetermination
