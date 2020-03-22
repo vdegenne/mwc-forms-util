@@ -89,7 +89,7 @@ export function fillForm(form: HTMLElement, object: any) {
 }
 
 
-export async function resetForm(form: HTMLElement) {
+export function resetForm(form: HTMLElement) {
   for (const node of getFormNodes(form)) {
     if (TextField && node instanceof TextField) {
       node.value = '';

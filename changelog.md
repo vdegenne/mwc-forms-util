@@ -1,3 +1,7 @@
+## 1.1.4
+
+- Remove undesired async in `resetForm` function.
+
 ## 1.1.3
 
 - Remove the material web components dependencies
