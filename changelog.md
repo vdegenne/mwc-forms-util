@@ -1,4 +1,4 @@
-## 1.1.4
+## 1.2.0
 
 - Remove undesired async in `resetForm` function.
 
