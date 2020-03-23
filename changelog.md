@@ -1,3 +1,8 @@
+## 1.4.0
+
+- fix await after changing the value of a material input
+
+
 ## 1.3.0
 
 - Add `resetTextInput` function to the module.

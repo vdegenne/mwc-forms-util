@@ -3,6 +3,15 @@ const TextArea = customElements.get('mwc-textarea');
 const Checkbox = customElements.get('mwc-checkbox');
 const Formfield = customElements.get('mwc-formfield');
 
+export function isMaterialElement(element: any) {
+  if ((TextField && element instanceof TextField) ||
+      (TextArea && element instanceof TextArea) ||
+      (Checkbox && element instanceof Checkbox) ||
+      (Formfield && element instanceof Formfield)) {
+    return true;
+  }
+}
+
 export function getFormNodes(form: HTMLElement) {
   return form.querySelectorAll<HTMLInputElement>(
       'mwc-textfield, mwc-textarea, mwc-checkbox, select');
@@ -113,17 +122,19 @@ export function resizeTextArea(textarea: HTMLTextAreaElement) {
   textarea.rows = nlcount + 1;
 }
 
-export function resetTextInput(input: any) {
+export async function resetTextInput(input: any) {
   if (input instanceof HTMLInputElement ||
       input instanceof HTMLTextAreaElement ||
       (TextArea && input instanceof TextArea) ||
       (TextField && input instanceof TextField)) {
-    input.value = '';
     const required = input.required;
     if (required) {
       input.required = false;
     }
     input.value = '';
+    if (isMaterialElement(input)) {
+      await input.udpateComplete;
+    }
     input.setCustomValidity('');
     input.reportValidity();
     if (required) {

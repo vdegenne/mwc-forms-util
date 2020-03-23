@@ -1,3 +1,4 @@
+export declare function isMaterialElement(element: any): true | undefined;
 export declare function getFormNodes(form: HTMLElement): NodeListOf<HTMLInputElement>;
 export declare function getFormInputs(form: HTMLElement): {
     [label: string]: HTMLInputElement;
@@ -7,4 +8,4 @@ export declare function serializeForm(form: HTMLElement): any;
 export declare function fillForm(form: HTMLElement, object: any): void;
 export declare function resetForm(form: HTMLElement): Promise<void>;
 export declare function resizeTextArea(textarea: HTMLTextAreaElement): void;
-export declare function resetTextInput(input: any): void;
+export declare function resetTextInput(input: any): Promise<void>;
