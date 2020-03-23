@@ -89,7 +89,7 @@ export function fillForm(form: HTMLElement, object: any) {
 }
 
 
-export function resetForm(form: HTMLElement) {
+export async function resetForm(form: HTMLElement) {
   for (const node of getFormNodes(form)) {
     if (TextField && node instanceof TextField) {
       node.value = '';
@@ -105,10 +105,29 @@ export function resetForm(form: HTMLElement) {
 }
 
 
-export function resizeTextArea(textarea: any) {
+export function resizeTextArea(textarea: HTMLTextAreaElement) {
   if (!TextArea || !(textarea instanceof TextArea)) {
     return;
   }
   const nlcount = (textarea.value.match(/\n/g) || []).length;
   textarea.rows = nlcount + 1;
+}
+
+export function resetTextInput(input: any) {
+  if (input instanceof HTMLInputElement ||
+      input instanceof HTMLTextAreaElement ||
+      (TextArea && input instanceof TextArea) ||
+      (TextField && input instanceof TextField)) {
+    input.value = '';
+    const required = input.required;
+    if (required) {
+      input.required = false;
+    }
+    input.value = '';
+    input.setCustomValidity('');
+    input.reportValidity();
+    if (required) {
+      input.required = true;
+    }
+  }
 }

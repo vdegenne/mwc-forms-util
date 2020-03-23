@@ -1,3 +1,7 @@
+## 1.3.0
+
+- Add `resetTextInput` function to the module.
+
 ## 1.2.0
 
 - Remove undesired async in `resetForm` function.
