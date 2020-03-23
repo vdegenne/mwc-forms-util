@@ -1,7 +1,10 @@
-const TextField = customElements.get('mwc-textfield');
-const TextArea = customElements.get('mwc-textarea');
-const Checkbox = customElements.get('mwc-checkbox');
-const Formfield = customElements.get('mwc-formfield');
+let TextField: any, TextArea: any, Checkbox: any, Formfield: any;
+window.addEventListener('load', (function() {
+                          TextField = customElements.get('mwc-textfield');
+                          TextArea = customElements.get('mwc-textarea');
+                          Checkbox = customElements.get('mwc-checkbox');
+                          Formfield = customElements.get('mwc-formfield');
+                        }));
 
 export function isMaterialElement(element: any) {
   if ((TextField && element instanceof TextField) ||

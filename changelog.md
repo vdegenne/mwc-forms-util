@@ -1,3 +1,7 @@
+## 1.5.0
+
+- waiting the window load to initialize the module objects
+
 ## 1.4.0
 
 - fix await after changing the value of a material input
