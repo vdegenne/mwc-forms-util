@@ -1,3 +1,8 @@
+## 1.5.1
+
+- add 'modifiers' parameter to `fillForm` method
+    You can now map an object property to a specific label (e.g. `(..., { description: 'desc' })` means `label="description" in the form is bound to `desc` property of the object)
+
 ## 1.5.0
 
 - waiting the window load to initialize the module objects

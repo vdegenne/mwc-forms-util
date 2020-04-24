@@ -78,8 +78,11 @@ export function serializeForm(form: HTMLElement) {
   return values;
 }
 
-export function fillForm(form: HTMLElement, object: any) {
-  for (const [label, element] of Object.entries(getFormInputs(form))) {
+export function fillForm(form: HTMLElement, object: any, modifiers: {[label: string]:string} = {}) {
+  for (let [label, element] of Object.entries(getFormInputs(form))) {
+    if (label in modifiers) {
+      label = modifiers[label]
+    }
     if (label in object) {
       if ((TextField && element instanceof TextField) ||
           (TextArea && element instanceof TextArea) ||
